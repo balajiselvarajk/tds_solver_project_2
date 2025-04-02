@@ -1,6 +1,9 @@
-flask
-python-dotenv
-requests
-pandas
 openpyxl
 pillow
+fastapi
+uvicorn
+aiofiles
+pandas
+python-dotenv
+werkzeug
+requests
