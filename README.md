@@ -7,7 +7,7 @@ This project is an API that automatically answers questions from graded assignme
 The API is accessible at the following endpoint:
 
 ```
-POST https://your-app.vercel.app/api/
+POST https://tds-solver-project-2.onrender.com/api/
 ```
 
 ## Request Format
@@ -20,7 +20,7 @@ The API accepts a POST request with the following parameters:
 You can make a request to the API using `curl` as shown below:
 
 ```bash
-curl -X POST "https://your-app.vercel.app/api/" \
+curl -X POST "https://tds-solver-project-2.onrender.com/api/" \
   -H "Content-Type: multipart/form-data" \
   -F "question=Download and unzip file abcd.zip which has a single extract.csv file inside. What is the value in the 'answer' column of the CSV file?" \
   -F "file=@abcd.zip"
