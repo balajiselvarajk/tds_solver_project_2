@@ -12,6 +12,7 @@ import subprocess
 import hashlib
 import shutil
 import requests
+import uvicorn
 
 # Load environment variables
 load_dotenv()
@@ -21,7 +22,7 @@ app = FastAPI()
 
 # Configuration
 ALLOWED_EXTENSIONS = {'csv', 'xlsx', 'xls', 'zip', 'md'}
-MAX_FILE_SIZE = 50 * 1024 * 1024  # 10MB
+MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
 LLM_FOUNDRY_TOKEN = os.getenv('LLM_FOUNDRY_TOKEN')
 
 """ Path: /gemini/v1beta/models/gemini-2.0-flash-001:generateContent
@@ -322,3 +323,7 @@ async def answer_question(question: str = Form(...), file: UploadFile = None):
         answer = await generate_response(question, file_info)
 
     return JSONResponse(content={"answer": answer})
+
+if __name__ == "__main__":
+    # Run the FastAPI app with uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8087)  # Change port as needed
