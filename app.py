@@ -236,9 +236,10 @@ async def generate_response(question: str, file_info: str = None) -> str:
         "6. For multi-step questions, break down the steps and provide the final answer."
     )
     # Construct the message prompt based on the presence of file_info
+    attached_file_info = f'Attached file information:\n{file_info}\n' if file_info else ''
     message_prompt = (
         f"Assignment question: {question}\n\n"
-        f"{f'Attached file information:\n{file_info}\n' if file_info else ''}"
+        f"{attached_file_info}"
         "Please provide the exact answer to be entered in the assignment."
     )
     
