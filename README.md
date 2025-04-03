@@ -1,4 +1,4 @@
-# Project 1 - LLM-Based Assignment Answering API
+# Project 2 - LLM-Based Assignment Answering API
 
 ## Overview
 This project is an API that automatically answers questions from graded assignments for the Tools in Data Science course at IIT Madras. The API accepts questions and optional file attachments, processes them, and returns the appropriate answers in a structured format.
